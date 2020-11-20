@@ -14,7 +14,7 @@ stages:
         steps:
         - task: Build maven code
           inputs:
-            mavenPomFile: 'java-project/pom.xml'
+            mavenPomFile: 'pom.xml'
             mavenOptions: '-Xmx3072m'
             javaHomeOption: 'JDKVersion'
             jdkVersionOption: '1.8'
