@@ -41,4 +41,4 @@ stages:
           WebAppName: 'ayush-java-webappserver'
           packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
           RuntimeStack: 'JAVA|8-jre8'
-          StartupCommand: '$(System.DefaultWorkingDirectory)/**/**/webapp-runner.jar'
+          StartupCommand: '$(System.DefaultWorkingDirectory)/**/**/webapp-runner.jar $(System.DefaultWorkingDirectory)/**/*.war'
