@@ -45,12 +45,18 @@ stages:
       pool:
         vmImage: 'ubuntu-latest'
       steps:
+      - task: DownloadBuildArtifacts@0
+        inputs:
+          buildType: 'current'
+          downloadType: 'single'
+          artifactName: 'ayush-maven'
+          downloadPath: '$(System.ArtifactsDirectory)'
       - task: AzureRmWebAppDeployment@4
         inputs:
           ConnectionType: 'AzureRM'
           azureSubscription: 'Visual Studio Enterprise (7c63f23d-06c9-42d2-9202-9fc56ec986fd)'
           appType: 'webAppLinux'
           WebAppName: 'ayush-java-webappserver'
-          packageForLinux: '$(build.artifactstagingdirectory)/**/**/*.war'
+          packageForLinux: '$(System.ArtifactsDirectory)/**/**/*.war'
           RuntimeStack: 'JAVA|8-jre8'
-          StartupCommand: '$(build.artifactstagingdirectory)/**/**/**/webapp-runner.jar $(build.artifactstagingdirectory)/**/**/*.war'
+          StartupCommand: '$(System.ArtifactsDirectory)/**/**/**/webapp-runner.jar $(System.ArtifactsDirectory)/**/**/*.war'
