@@ -53,5 +53,5 @@ stages:
             WebAppName: 'ayush-java-webappserver'
             packageForLinux: '$(System.DefaultWorkingDirectory)/**/java-project-1.0-SNAPSHOT.jar'
             RuntimeStack: 'TOMCAT|8.5-jre8'
-            StartupCommand: 'java -jar target/java-project-1.0-SNAPSHOT.jar 123456'
+            StartupCommand: 'java -jar '$(System.DefaultWorkingDirectory)/**/java-project-1.0-SNAPSHOT.jar' 123456'
 
