@@ -53,5 +53,5 @@ stages:
             WebAppName: 'ayush-java-webappserver'
             packageForLinux: '$(System.ArtifactsDirectory)/target/*'
             RuntimeStack: 'JAVA|8-jre8'
-            StartupCommand: 'java -jar $(System.ArtifactsDirectory)/**/webapp-runner.jar $(System.ArtifactsDirectory)/**/*.war'
+            StartupCommand: 'java -jar $(System.ArtifactsDirectory)/**/**/webapp-runner.jar $(System.ArtifactsDirectory)/**/*.war'
 
