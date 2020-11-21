@@ -26,7 +26,7 @@ stages:
         displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
         inputs:
           SourceFolder: '$(system.defaultworkingdirectory)'
-          Contents: '**/*.war'
+          Contents: '**/*'
           TargetFolder: '$(build.artifactstagingdirectory)'
         condition: succeededOrFailed()
 
