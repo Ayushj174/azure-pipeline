@@ -52,5 +52,6 @@ stages:
             appType: 'webAppLinux'
             WebAppName: 'ayush-java-webappserver'
             packageForLinux: '$(System.DefaultWorkingDirectory)/target/*'
-            RuntimeStack: 'TOMCAT|8.5-jre8'
-            StartupCommand: 'java -jar $(System.DefaultWorkingDirectory)/**/webapp-runner.jar $(System.DefaultWorkingDirectory)/**/*.war' 
+            RuntimeStack: 'JAVA|8-jre8'
+            StartupCommand: 'java -jar $(System.DefaultWorkingDirectory)/**/webapp-runner.jar $(System.DefaultWorkingDirectory)/**/*.war'
+
